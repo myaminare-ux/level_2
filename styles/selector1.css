@@ -1,0 +1,40 @@
+/* 선택자 {속성:값;} */
+main > h1 {
+    background-color: #f5f5f5;;/* 배경색 */
+    color: #555;/* 글자 색상 */
+    /* 글꼴명이 공백 또는 한글일 때는 따옴표 묶기 */
+    /* font-family:'궁서'; */
+    /* font-family:'Noto Sans KR'; */
+    /* 글꼴명 2개 이상 작성하기(대표 글꼴, 후보 글꼴) */
+    font-family:'Noto serif', '마루 부리', '궁서';
+    /* 맑은 고딕, 궁서, 바탕, 굴림 등 컴퓨터 기본 글꼴 외 설치 글꼴은 웹 주소로 따로 연결해야 한다. */
+}
+main > p {
+    background-color: lemonchiffon;
+    color: darkolivegreen;
+    font-family: 'pretnedard', 'Noto Sans KR', '맑은 고딕';
+}
+main > .news {
+    background-color:#eee;
+}
+main > .news > li {
+    color: #0cf;
+    font-size:0.75em; /* 12px */
+    /* 웹 글꼴 기본 크기 : 16px = 1em */
+}
+main > .news > .css {
+    font-size:1.25em;/* 20px */
+}
+main > #blog {
+    background-color: #eee;
+}
+main > #blog > h2 {
+    font-size: 0.875em;/* 14px */
+}
+main > #blog > p {
+    background-color: #ff0;
+    font-size: 1.125em;/* 18px */
+}
+main > #blog > h2+p {
+    font-size: 0.625em;/* 10px */
+}
