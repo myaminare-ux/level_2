@@ -1,0 +1,179 @@
+/* table_01.css */
+/* 공통 */
+h1 {
+    font-family:'Pretendard';
+    font-size:1.2em;
+    font-weight:500;
+    border-bottom:1px dashed #333;
+    padding-bottom:8px;
+}
+/* table {margin:8px 10px 20px;} */
+table {margin:8px 0;}
+/* table td {
+    padding:10px;
+} */
+/* 개별 */
+#t1 {
+    border:1px solid #000;
+}
+#t2 {
+    border-top:4px solid #f00;
+}
+/* #t2 > tbody > tr > td {border:2px solid #00f;} */
+/* 자식 선택자(>)는 특정 부모 안 자식, 자손 요소가 2개 이상 중복될 때 자식만 선택하기 위해서 사용한다. */
+/* 아이디 t2 요소 안 tr 요소 안 td를 선택한다. */
+#t2 tr td {
+    border:2px solid #00f;
+}
+#t3 {
+    border-bottom:2px solid #000;
+}
+#t3 tr * {
+    border:1px solid #000;
+}
+#t3 tr:nth-child(1) th {background-color:yellow;}
+#t3 tr:nth-child(1) td:nth-child(2) {background-color:pink;}
+#t3 tr:nth-child(2) td:nth-child(1) {background-color:lime;}
+#t3 tr:nth-child(2) td:nth-child(3) {background-color:aqua;}
+/* td (내용 열) == p (내용 단락) */
+/* ================================================== 도서재고표 */
+#book_stock {
+    background-color:#f2f2f2;
+    font-family:'Pretendard';
+    border-radius:25px;
+    overflow:hidden;
+}
+#book_stock tr {}
+/* td, th 열 선택자 동시 패딩 적용 (tr의 모든 자식 선택) */
+/* tr의 자식은 td, th만 올 수 있다. 만약 열 태그에 다른 a 등의 태그를 쓸 경우 tr * 라고 쓰면 a 태그까지 잡히므로 tr > * 로 써서 자식인 td, th만 잡는 용도로 사용할 수 있다. */
+#book_stock tr > * {
+    padding:16px 0;
+    letter-spacing:-0.02em;
+}
+#book_stock tr:nth-child(1) {
+    background-color:#FF0066;
+}
+#book_stock tr:nth-child(3) {
+    border:2px solid #FF0066;
+}
+#book_stock tr th {
+    width:100px;
+    font-size:1.125em;
+    font-weight:600;
+    color:#fff;
+}
+#book_stock tr th:nth-child(1) {width:250px;}
+#book_stock tr td {
+    text-align:center;
+    line-height:1.4;
+}
+/* (아래) 선택자 해석 : 각 행(tr)의 첫번째(nth) td 선택 */
+#book_stock tr td:nth-child(1) {
+    text-align:left;
+    padding-left:16px;
+}
+#book_stock tr:nth-child(3) td {color:#FF0066;}
+/* ============================================= 지역별 매출 현황표 */
+.area_wrap {width:750px;}
+.area_wrap .sale_title {
+    font-family:'Noto Sans KR';
+    letter-spacing:-0.02em;
+    display:flex; /* 피그마의 오토레이아웃 */
+    flex-flow:row nowrap; /* 오토레이아웃 흐름(가로, 줄바꿈 X) */
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+.area_wrap .sale_title h2 {
+    font-weight:500;
+}
+.area_wrap .sale_title p {
+    font-size:0.875em;
+}
+.area_wrap #sale_status {
+    background-color:#f5f5f5;
+    font-family:'Noto Sans KR';
+    letter-spacing:-0.02em;
+}
+.area_wrap #sale_status tr {}
+.area_wrap #sale_status tr:nth-child(1) {
+    border:2px solid #000;
+    border-right:0;
+    border-left:0;
+}
+.area_wrap #sale_status tr:nth-child(5) {
+    background-color:#A8D18D;
+}
+.area_wrap #sale_status tr th {
+    width:150px; /* 같은 수직 방향 다른 행 td까지 동시 적용 */
+    height:32px; /* 깉은 수평 방향 th 적용 */
+}
+.area_wrap #sale_status tr td {
+    padding:16px 0;
+    text-align:center;
+    font-size:0.875em;
+    line-height:1.3;
+}
+.area_wrap .src {
+    font-family:'Noto Sans KR';
+    font-size:0.875em;
+    letter-spacing:-0.02em;
+    line-height:1.3;
+    /* width:750px; */
+    text-align:right;
+    background-color:aqua;
+}
+/* ============================================= 행&열 합치기 연습용 */
+#t4 {margin:24px;}
+#t4 * {
+    border:1px solid #000;
+    text-align:center;
+    padding:6px;
+}
+/* ============================================= 선불 요금제 */
+#pay {width:1100px;}
+#pay tr {}
+#pay tr > * {
+    padding:10px 23px;
+}
+#pay tr:nth-child(1) {
+    border-top:2px solid #000;
+    border-bottom:1px dashed #000;
+}
+#pay tr:nth-child(2) {border-bottom:2px solid #000;}
+#pay tr th {
+    background-color:#fefefe;
+    letter-spacing:-0.02em;
+    font-weight:700;
+    line-height:1.5;
+}
+#pay tr th > img {}
+#pay tr th h2 {
+    font-family:'Noto Sans KR';
+    font-weight:700;
+    line-height:1.5;
+}
+#pay tr th p {
+    font-family:'Noto Sans KR';
+    font-size:0.75em;
+    font-weight:300;
+    line-height:1.2;
+}
+#pay tr th > span {
+    font-family:'Noto Sans KR';
+}
+#pay tr td {
+    font-family:'Noto Sans KR';
+    background-color:#f5f5f5;
+    height:60px;
+    text-align:center;
+    font-size:500;
+    letter-spacing:-0.02em;
+}
+#pay tr td:nth-child(1) {width:250px;}
+#pay tr td:nth-child(3) {width:350px;}
+#pay tr td em {
+    font-family:'Noto Sans KR';
+    font-size:500;
+    letter-spacing:-0.02em;
+    color:#FF0066;
+}
